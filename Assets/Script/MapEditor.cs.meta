@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 847a9272836f8af4abc814453c6fbb71
+timeCreated: 1479726665
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - canvas: {fileID: 1000011728001476, guid: 92088f1daf623344b9efde3c874c07f4, type: 2}
+  - buttonPrefab: {fileID: 114000013028271290, guid: 459126e190aa8b347beb6a055d94867f,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
