@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,13 +29,16 @@ public class GameManager : MonoBehaviour
             { -1, -1, -1, -1, -1, -1 }
         });
 
+        MapLoader loader = MapLoader.Instance;
+        loader.LoadMap(this.map);
+
         InstantiateTiles();
     }
 
     public void LoadMap(int[,] map)
     {
-        this.map = (int[,])map.Clone();
         this.mapSize = map.GetLength(0);
+        this.map = (int[,])map.Clone();
     }
 
     public void InstantiateTiles()
@@ -42,7 +47,7 @@ public class GameManager : MonoBehaviour
         {
             for (int j = 0; j < mapSize; j++)
             {
-                if (map[i, j] == -1)
+                if (map[j, i] == -1)
                 {
                     Instantiate(wallPrefab, new Vector3(i, j, 0), Quaternion.identity);
                 }

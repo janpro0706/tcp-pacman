@@ -18,9 +18,9 @@ public class Navigator : MonoBehaviour {
 
         ArrayList traverse = Dijkstra.dijkstra(map, 0);
 
-        for (int i = 0; i < traverse.Count; i++)
-        {
-            Debug.Log(traverse[i]);
-        }
+        //for (int i = 0; i < traverse.Count; i++)
+        //{
+        //    Debug.Log(traverse[i]);
+        //}
     }
 }
