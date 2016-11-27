@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class TileControl : MonoBehaviour {
+    private MapEditor editor;
+
     private Button button;
 
     public int x, y;
@@ -12,15 +14,29 @@ public class TileControl : MonoBehaviour {
 
     void Awake()
     {
+        editor = MapEditor.instance;
+
         button = gameObject.GetComponent<Button>();
 
-        button.onClick.AddListener(Toggle);
+        button.onClick.AddListener(OnClick);
     }
 
-    public void Toggle()
+    public void OnClick()
     {
-        status = (status + 1) % 2;
+        editor.UpdateStatus(x, y, status);
+    }
 
+    public void SetState(int status)
+    {
+        if (this.status != status)
+        {
+            this.status = status;
+            Invalidate();
+        }
+    }
+
+    public void Invalidate()
+    {
         switch (status)
         {
             case 0:
